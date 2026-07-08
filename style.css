@@ -1,3 +1,12 @@
+:root {
+  --primary-color: rgb(61, 58, 41);
+  --secondary-color: rgb(102, 93, 35);
+  --terciary-color: silver;
+  --bg-color: white;
+  --bg-section: #ebeacd;
+  --header-height: 115px;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -11,11 +20,13 @@ html {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  background-color: var(--bg-color);
 
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
 
 }
@@ -25,65 +36,131 @@ img {
   width: 100%;
 }
 
+h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/*Header*/
+header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--bg-color);
+  box-shadow: 20px 20px 50px 15px grey;
+  padding: 15px;
+}
+
+.header-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  list-style-type: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--secondary-color);
+
+
+}
+
+.menu {
+  display: none;
+
+}
+
 /*Hero*/
 .hero {
+
   background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(img/risotto-pasta.png);
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)), url(img/risotto-pasta.png);
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-  min-height: 300px;
+  color: var(--bg-color);
+  min-height: 400px;
   background-attachment: fixed;
-
-
-
 
 }
 
 .hero .hero-content {
-  width: 60%;
-  max-width: 1100px;
+  width: 80%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: left;
 }
 
 
+
 /*Dishes*/
+.our-dishes {
+  background-color: var(--bg-section);
+  padding: 0;
+}
+
 .dish1 {
   background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(img/main-course.jpg);
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url(img/main-course.jpg);
 
   min-height: 200px;
-  flex-basis: 75%;
+  flex-basis: 65%;
 
 }
 
 
 .dish2 {
   background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(img/soup.jpg);
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url(img/soup.jpg);
 
 }
 
 .dish3 {
   background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(img/starter.jpg);
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url(img/starter.jpg);
 
 }
 
 .dish4 {
   background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(img/dessert.jpg);
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url(img/dessert.jpg);
 
 }
 
 .dish5 {
   background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(img/shrimps.jpg);
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)), url(img/shrimps.jpg);
 
 }
 
@@ -101,8 +178,8 @@ img {
 .dish5 {
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
-  border: 0.5px solid silver;
+  color: var(--bg-color);
+  border: 0.5px solid var(--terciary-color);
   margin: 0;
 }
 
@@ -124,23 +201,33 @@ img {
 .small-dishes {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .small {
   min-height: 150px;
   padding: 20px;
-  flex-basis: 50%;
+  flex-basis: 100%;
 }
 
 
 
 @media screen and (min-width: 480px) {
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .menu {
+    display: block;
+  }
+
   .dish1 .name {
-    font-size: 36px;
+    font-size: 3rem;
   }
 
   .small .name {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   .dish1 {
@@ -166,16 +253,23 @@ img {
 }
 
 @media screen and (min-width: 860px) {
+  .logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+
   .dish1 .name {
-    font-size: 48px;
+    font-size: 3rem;
+    ;
   }
 
   .small .name {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   .dish1 {
-    min-height: 420px;
+    min-height: 550px;
     padding: 20px;
   }
 
@@ -195,5 +289,9 @@ img {
   .small-dishes {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .our-dishes {
+    padding: 20px 80px 80px 80px;
   }
 }
