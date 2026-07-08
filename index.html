@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
 </head>
+
 <body>
-  
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Domů</a></li>
+          <li><a href="#dishes">Nabídka</a></li>
+
+        </ul>
+      </nav>
+    </div>
+
+  </header>
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+
+
+          <h1>Dobrou chuť</h1>
+          <p>Vítejte v naší restauraci!</p>
+
+        </div>
+      </div>
+    </section>
+    <section class="our-dishes" id="our-dishes">
+      <div class="container">
+        <div class="dishes-content">
+
+          <div class="dishes" id="dishes">
+            <h2>Naše nabídka</h2>
+            <div class="dishes-list">
+              <!-- main course -->
+              <div class="main-course dish1">
+                <div class="name">Hlavní jídla</div>
+              </div>
+              <!-- smaller dishes  -->
+              <div class="small-dishes">
+                <div class="dish small dish2">
+                  <div class="name">Polévky</div>
+                </div>
+                <div class="dish small dish3">
+                  <div class="name">Předkrmy</div>
+                </div>
+                <div class="dish small dish4">
+                  <div class="name">Dezerty</div>
+                </div>
+                <div class="dish small dish5">
+                  <div class="name">Rizota a těstoviny</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Martina Kratenova, Engeto Web dev course project. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
