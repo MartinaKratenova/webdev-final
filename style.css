@@ -53,14 +53,15 @@ h2 {
 header {
   width: 100%;
   height: var(--header-height);
-  background-color: var(--bg-color);
 
+  background-color: var(--bg-color);
   padding: 15px;
 }
 
 .header-items {
   display: flex;
   flex-direction: row;
+
   justify-content: space-between;
   align-items: center;
 }
@@ -88,26 +89,26 @@ header {
 
 .menu a:hover {
   color: var(--secondary-color);
-
-
 }
 
 .menu {
   display: none;
-
 }
 
 /*Hero*/
 .hero {
 
-  background-image: linear-gradient(to bottom,
+  background-image:
+    linear-gradient(to bottom,
       rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)), url(img/risotto-pasta.png);
+      rgba(0, 0, 0, 0.4)),
+    url(img/risotto-pasta.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--bg-color);
   min-height: 400px;
   background-attachment: fixed;
+  padding: 50px 0;
 
 }
 
@@ -116,16 +117,27 @@ header {
   max-width: 1300px;
   display: flex;
   flex-direction: column;
+  align-content: center;
 
-  align-items: left;
 }
 
-
+.hero h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
 
 /*Dishes*/
 .our-dishes {
   background-color: var(--bg-section);
-  padding: 0;
+  padding: 30px 0;
+}
+
+.dishes-list {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
 }
 
 .dish1 {
@@ -133,7 +145,16 @@ header {
   min-height: 275px;
   flex-basis: 85%;
   flex-grow: 3;
+}
 
+.dish2,
+.dish3,
+.dish4,
+.dish5 {
+  min-height: 120px;
+  flex-grow: 1;
+  position: relative;
+  flex-basis: 50%;
 }
 
 .dish1 .name,
@@ -142,9 +163,13 @@ header {
 .dish4 .name,
 .dish5 .name {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 15px;
+  left: 20px;
+  color: var(--terciary-color);
+
+}
+
+.dish1 .name {
   font-size: 2rem;
 }
 
@@ -161,27 +186,14 @@ header {
   overflow: hidden;
 }
 
-.dish2,
-.dish3,
-.dish4,
-.dish5 {
-  min-height: 120px;
-  flex-grow: 1;
-  position: relative;
-  flex-basis: 50%;
-}
-
-.dish1,
-.dish2,
-.dish3,
-.dish4,
-.dish5 {
+.dish {
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--bg-color);
   border: 0.5px solid var(--terciary-color);
   margin: 0;
   overflow: hidden;
+  padding: 15px;
 }
 
 
@@ -191,13 +203,7 @@ header {
 
 }
 
-.dishes-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1px;
-}
+
 
 .small-dishes {
   display: flex;
@@ -212,11 +218,8 @@ header {
   flex-grow: 1;
 }
 
-.dish .name {
-  font-size: 1.5rem;
-  text-align: left;
-  color: var(--terciary-color);
-
+.small .name {
+  font-size: 1.35rem;
 }
 
 .dish .name a {
@@ -224,10 +227,12 @@ header {
   color: var(--terciary-color);
   transition: color 0.3s ease;
 }
+
 .dish .name a:visited,
 .dish .name a:hover,
-.dish .name a:active ,
-.dish .name a:focus {
+.dish .name a:active,
+.dish .name a:focus,
+.dish .name a:link {
   color: var(--terciary-color);
 }
 
@@ -236,12 +241,12 @@ header {
 .dish3:hover img,
 .dish4:hover img,
 .dish5:hover img {
-  transform: scale(1.2);
+  transform: scale(1.1);
   overflow: hidden;
 }
 
 .dish1:hover div.name {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .dish2:hover .name,
@@ -272,21 +277,25 @@ footer {
     display: block;
   }
 
-  .dish1 .name {
-    font-size: 3rem;
+  .our-dishes {
+    padding: 30px 0;
   }
 
-  .small .name {
-    font-size: 1.375rem;
+  .dishes-list {
+    display: flex;
+    flex-direction: column;
   }
 
   .dish1 {
     min-width: 360px;
     min-height: 250px;
     padding: 20px;
-    flex-basis: 50%;
+    flex-basis: 100%;
   }
 
+  .dish1 .name {
+    font-size: 3rem;
+  }
 
   .small {
     min-height: 180px;
@@ -294,9 +303,8 @@ footer {
     flex-basis: 50%;
   }
 
-  .dishes-list {
-    display: flex;
-    flex-direction: column;
+  .small .name {
+    font-size: 1.5rem;
   }
 
   .small-dishes {
@@ -305,6 +313,17 @@ footer {
     flex-wrap: wrap;
     flex-basis: 50%;
   }
+
+  .dish1:hover div.name {
+  font-size: 3.5rem;
+}
+
+.dish2:hover .name,
+.dish3:hover .name,
+.dish4:hover .name,
+.dish5:hover .name {
+  font-size: 2.5rem;
+}
 }
 
 @media screen and (min-width: 860px) {
@@ -313,22 +332,27 @@ footer {
     height: 100px;
   }
 
-
-  .dish1 .name {
-    font-size: 3rem;
-    ;
+  .our-dishes {
+    padding: 50px 0;
   }
 
-  .small .name {
-    font-size: 1.75rem;
+  .dishes-list {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
   }
 
   .dish1 {
     flex-basis: 50%;
-
     min-width: 460px;
     min-height: 700px;
-    padding: 20px;
+    padding: 40px;
+  }
+
+  .dish1 .name {
+    font-size: 3rem;
+    ;
   }
 
   .small {
@@ -338,11 +362,8 @@ footer {
 
   }
 
-  .dishes-list {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
+  .small .name {
+    font-size: 1.75rem;
   }
 
   .small-dishes {
@@ -353,12 +374,19 @@ footer {
 
   }
 
-  .our-dishes {
-    padding: 20px;
-  }
 
   .dishes {
     max-width: 1300px;
     width: 100%;
   }
+  .dish1:hover div.name {
+  font-size: 4rem;
+}
+
+.dish2:hover .name,
+.dish3:hover .name,
+.dish4:hover .name,
+.dish5:hover .name {
+  font-size: 2.5rem;
+}
 }
