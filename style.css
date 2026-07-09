@@ -1,7 +1,7 @@
 :root {
   --primary-color: rgb(61, 58, 41);
   --secondary-color: rgb(102, 93, 35);
-  --terciary-color: silver;
+  --terciary-color: white;
   --bg-color: white;
   --bg-section: #ebeacd;
   --bg-footer: rgb(53, 50, 34);
@@ -16,6 +16,7 @@ html {
 :after,
 :before {
   box-sizing: inherit;
+  margin: 0;
 }
 
 body {
@@ -34,6 +35,7 @@ body {
 
 img {
   display: block;
+  height: 100%;
   width: 100%;
 }
 
@@ -52,7 +54,7 @@ header {
   width: 100%;
   height: var(--header-height);
   background-color: var(--bg-color);
-  
+
   padding: 15px;
 }
 
@@ -127,42 +129,36 @@ header {
 }
 
 .dish1 {
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)), url(img/main-course.jpg);
-
-  min-height: 200px;
-  flex-basis: 65%;
+  position: relative;
+  min-height: 275px;
+  flex-basis: 85%;
+  flex-grow: 3;
 
 }
 
-
-.dish2 {
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)), url(img/soup.jpg);
-
+.dish1 .name,
+.dish2 .name,
+.dish3 .name,
+.dish4 .name,
+.dish5 .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 2rem;
 }
 
-.dish3 {
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)), url(img/starter.jpg);
+.dish1 img,
+.dish2 img,
+.dish3 img,
+.dish4 img,
+.dish5 img {
+  position: absolute;
+  top: 0;
+  left: 0;
 
-}
-
-.dish4 {
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)), url(img/dessert.jpg);
-
-}
-
-.dish5 {
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)), url(img/shrimps.jpg);
-
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .dish2,
@@ -170,6 +166,9 @@ header {
 .dish4,
 .dish5 {
   min-height: 120px;
+  flex-grow: 1;
+  position: relative;
+  flex-basis: 50%;
 }
 
 .dish1,
@@ -182,6 +181,7 @@ header {
   color: var(--bg-color);
   border: 0.5px solid var(--terciary-color);
   margin: 0;
+  overflow: hidden;
 }
 
 
@@ -202,15 +202,54 @@ header {
 .small-dishes {
   display: flex;
   flex-wrap: wrap;
-
+  flex-grow: 1;
 }
 
 .small {
   min-height: 150px;
   padding: 20px;
   flex-basis: 100%;
+  flex-grow: 1;
 }
 
+.dish .name {
+  font-size: 1.5rem;
+  text-align: left;
+  color: var(--terciary-color);
+
+}
+
+.dish .name a {
+  text-decoration: none;
+  color: var(--terciary-color);
+  transition: color 0.3s ease;
+}
+.dish .name a:visited,
+.dish .name a:hover,
+.dish .name a:active ,
+.dish .name a:focus {
+  color: var(--terciary-color);
+}
+
+.dish1:hover img,
+.dish2:hover img,
+.dish3:hover img,
+.dish4:hover img,
+.dish5:hover img {
+  transform: scale(1.2);
+  overflow: hidden;
+}
+
+.dish1:hover div.name {
+  font-size: 4rem;
+}
+
+.dish2:hover .name,
+.dish3:hover .name,
+.dish4:hover .name,
+.dish5:hover .name {
+  font-size: 2rem;
+}
 
 /*Footer*/
 footer {
@@ -219,7 +258,7 @@ footer {
   padding: 10px;
   text-align: center;
   font-size: 0.9rem;
- box-shadow:2px -8px 100px 3px var(--terciary-color);
+  box-shadow: 2px -8px 100px 3px var(--terciary-color);
 }
 
 
@@ -242,9 +281,12 @@ footer {
   }
 
   .dish1 {
+    min-width: 360px;
     min-height: 250px;
     padding: 20px;
+    flex-basis: 50%;
   }
+
 
   .small {
     min-height: 180px;
@@ -258,8 +300,10 @@ footer {
   }
 
   .small-dishes {
+    min-width: 200px;
     display: flex;
     flex-wrap: wrap;
+    flex-basis: 50%;
   }
 }
 
@@ -280,7 +324,10 @@ footer {
   }
 
   .dish1 {
-    min-height: 550px;
+    flex-basis: 50%;
+
+    min-width: 460px;
+    min-height: 700px;
     padding: 20px;
   }
 
@@ -288,6 +335,7 @@ footer {
     min-height: 230px;
     padding: 20px;
     flex-basis: 50%;
+
   }
 
   .dishes-list {
@@ -298,11 +346,19 @@ footer {
   }
 
   .small-dishes {
+    min-width: 400px;
     display: flex;
     flex-wrap: wrap;
+    flex-basis: 50%;
+
   }
 
   .our-dishes {
-    padding: 20px 80px 80px 80px;
+    padding: 20px;
+  }
+
+  .dishes {
+    max-width: 1300px;
+    width: 100%;
   }
 }
