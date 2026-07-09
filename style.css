@@ -110,27 +110,15 @@ header {
 
   background-attachment: fixed;
   padding: 50px 15px;
- 
-
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: flex-start;
 
 
 }
 
 .hero .hero-content {
-  width: 100%;
+  width: 80%;
   max-width: 1300px;
-    /* border: #ebeacd 5px solid; */
-    
-}
 
-.hero .container {
-   margin: 0;
 }
-
 
 .hero h1 {
   font-size: 6rem;
