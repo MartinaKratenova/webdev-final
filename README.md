@@ -32,3 +32,4 @@ Při přípravě tabulek v databázi používej prosím jen tyto SQL příkazy. 
 Dále máš k dispozici SQL příkaz pro nastavení administrátora - viz ukol v engetu
 
 
+menu_items ma sloupecky name, description, price - pozn. daji se pridat obrazky?
