@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web dev project</title>
+  <link rel="stylesheet" href="general-style.css">
+  <link rel="stylesheet" href="admin-style.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-items">
+        <div class="logo">
+          <img src="img/logo-nobg.png" alt="Logo">
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="/index.html">Domů</a></li>
+            <li><a href="#dishes">Nabídka</a></li>
+            <li><a href="/admin.html">Admin</a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+  <main>
+
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+
+
+          <h1>Administrace</h1>
+
+
+        </div>
+      </div>
+    </section>
+    <section class="list default">
+      <div class="container">
+
+        <div class="card">
+          <div class="desc">
+            <div class="title text item">
+              <label for="title label">Nazev</label>
+              <div class="title">Krevety s testovinami</div>
+            </div>
+            <div class="description text item">
+              <label for="description label">Popis</label>
+              <div class="description">Krevety s testovinami a popisem</div>
+            </div>
+            <div class="price text item">
+              <label for="price label">Cena</label>
+              <div class="price">350,00</div>
+            </div>
+            <div class="type text item">
+              <label for="type label">Typ</label>
+              <div class="type">Hlavní chod</div>
+            </div>
+            <div class="icons  item">
+              <span class="material-icons">
+                edit
+              </span>
+              <span class="material-icons">
+                delete
+              </span>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section class="list active">
+      <div class="container">
+
+        <form class="card">
+          <div class="desc">
+            <div class="title text item">
+              <label for="title" class="label">Nazev</label>
+              <input type="text" class="title" id="title" placeholder="Krevety s testovinami">
+
+            </div>
+
+            <div class="description text item">
+              <label for="description" class="label">Popis</label>
+              <textarea class="description" id="description" placeholder="">Krevety s testovinami a popisem
+            </textarea>
+            </div>
+
+            <div class="price text item">
+              <label for="price" class="label">Cena</label>
+              <input type="number" id="price" class="price">
+            </div>
+
+
+            <div class="type text item">
+              <label for="dish-type" class="label">Typ</label>
+              <select class="dish-type" id="dish-type">
+                <option value="main-course">Hlavní chody</option>
+                <option value="dessert">Dezerty</option>
+                <option value="italian">Rizota a těstoviny</option>
+                <option value="starter">Předkrmy</option>
+                <option value="soup">Polévky</option>
+              </select>
+            </div>
+
+
+            <div class="icons item">
+              <button class="btn">Uložit</button>
+            </div>
+          </div>
+        </form>
+
+
+      </div>
+    </section>
+
+
+
+
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Martina Kratenova, Engeto Web dev course project. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
