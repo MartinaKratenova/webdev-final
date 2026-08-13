@@ -1,15 +1,16 @@
 /*Hero*/
 .hero {
-  min-height: 30vh;
+  min-height: 10vh;
 
-  background-image:
+  /* background-image:
     linear-gradient(to bottom,
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)),
     url(img/main-shrimp.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   color: var(--bg-color);
+  background-color: var(--primary-color);
 
   background-attachment: fixed;
   padding: 50px 15px;
@@ -24,8 +25,8 @@
 }
 
 .hero h1 {
-  font-size: 6rem;
-  margin-bottom: 20px;
+  font-size: 4rem;
+  margin-bottom: 0px;
 }
 
 /*****
@@ -58,10 +59,11 @@ Vypis dat
 .card {
   display: grid;
   gap: 15px;
-  border: 1px solid black;
+  border: 1px solid rgb(206, 198, 177);
   padding: 10px 20px;
   margin: 10px auto;
   width: 80vw;
+  box-shadow: 4px 4px 8px rgb(204, 198, 183);
 }
 
 .item {
