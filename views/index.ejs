@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="cs">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web dev project</title>
-  <link rel="stylesheet" href="general-style.css">
-  <link rel="stylesheet" href="style.css">
+<%- include ('./partials/header') %>
 
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-
-</head>
-
-<body>
-  <header class="header">
-    <div class="container">
-      <div class="header-items">
-        <div class="logo">
-          <img src="img/logo-nobg.png" alt="Logo">
-        </div>
-        <nav class="menu">
-          <ul>
-            <li><a href="/index.html">Domů</a></li>
-            <li><a href="#dishes">Nabídka</a></li>
-            <li><a href="/admin.html">Admin</a></li>
-
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-  </header>
   <main>
     <section class="hero" id="hero">
       <div class="container">
@@ -58,7 +23,7 @@
 
               <!-- main course -->
               <div class="dish main-course dish1">
-                <a href="/main-courses.html">
+                <a href="/dishes">
                   <img src="img/main-shrimp.jpg" alt="Hlavní jídla">
 
                   <div class="name">
@@ -71,7 +36,7 @@
               <!-- smaller dishes  -->
               <div class="small-dishes">
                 <div class="dish small dish2">
-                  <a href="/soups.html">
+                  <a href="/dishes">
                     <img src="img/soup.jpg" alt="Polévky">
                     <div class="name">
                       Polévky
@@ -82,7 +47,7 @@
 
 
                 <div class="dish small dish3">
-                  <a href="/starters.html">
+                  <a href="/dishes">
                     <img src="img/starter.jpg" alt="Předkrmy">
                     <div class="name">
                       Předkrmy
@@ -93,7 +58,7 @@
 
 
                 <div class="dish small dish4">
-                  <a href="/desserts.html">
+                  <a href="/dishes">
                     <img src="img/dessert.jpg" alt="Dezerty">
                     <div class="name">
                       Dezerty
@@ -105,7 +70,7 @@
 
 
                 <div class="dish small dish5">
-                  <a href="/italian.html">
+                  <a href="/dishes">
                     <img src="img/shrimps.jpg" alt="Rizota a těstoviny">
                     <div class="name">
                       Rizota a těstoviny
@@ -125,12 +90,4 @@
     </section>
 
   </main>
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 Martina Kratenova, Engeto Web dev course project. All rights reserved.</p>
-    </div>
-  </footer>
-
-</body>
-
-</html>
+  <%- include ('./partials/footer') %>

@@ -1,0 +1,25 @@
+{
+  "name": "webdev-final",
+  "version": "1.0.0",
+  "description": "Tvým cílem je vytvořit komplexní webovou aplikaci na správu menu v restauraci. Aplikace bude mít veřejnou část a administraci.",
+  "homepage": "https://github.com/MartinaKratenova/webdev-final#readme",
+  "bugs": {
+    "url": "https://github.com/MartinaKratenova/webdev-final/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinaKratenova/webdev-final.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node --watch js/index.js"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  }
+}

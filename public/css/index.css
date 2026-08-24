@@ -1,14 +1,13 @@
-
-
+@import "root.css";
 /*Hero*/
 .hero {
   min-height: 80vh;
 
-  background-image:
+  background-image: 
     linear-gradient(to bottom,
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)),
-    url(img/risotto-pasta.png);
+    var(--bg-img);
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--bg-color);

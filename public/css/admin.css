@@ -1,14 +1,9 @@
+@import "root.css";
+
 /*Hero*/
 .hero {
   min-height: 10vh;
 
-  /* background-image:
-    linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)),
-    url(img/main-shrimp.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; */
   color: var(--bg-color);
   background-color: var(--primary-color);
 
