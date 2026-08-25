@@ -1,9 +1,3 @@
-const mainCourse = document.getElementById('main-course');
-const italian = document.getElementById('italian');
-const starter = document.getElementById('starter');
-const soup = document.getElementById('soup');
-const dessert = document.getElementById('dessert');
-
 const meals = document.getElementById('meals');
 
 const sectionDishes = document.getElementById('dishes');
@@ -19,6 +13,12 @@ const jidla = [
     "name": "Chicken Tikka Masala",
     "description": "Kuřecí kousky v jemně pikantní omáčce z rajčat, smetany a indického koření.",
     "price": 219,
+    "type": "main-course"
+  },
+  {
+    "name": "Butter Chicken",
+    "description": "Maslove Kuřecí kousky v jemně pikantní omáčce z rajčat, smetany a indického koření.",
+    "price": 300,
     "type": "main-course"
   },
   {
@@ -42,13 +42,14 @@ const jidla = [
 ];
 
 
-
 const renderMeals = (meals) => {
 
+  sectionDishes.textContent = '';
   meals.forEach(m => {
     if (m.name && m.price && m.type && m.description) {
       const mealCard = createMealCard(m.name, m.price, m.type, m.description);
       sectionDishes.append(mealCard);
+
     }
   }
   );
@@ -105,8 +106,6 @@ const createMealCard = (name, price, type, description) => {
 };
 
 
-
-
 meals.addEventListener('click', (e) => {
 
   if (e.target.classList.contains('meal')) {
@@ -124,16 +123,21 @@ const getAllMeals = () => {
 
   const data = response;
 
-  // meals.addEventListener('click', (e) => {
+  meals.addEventListener('click', (e) => {
+
+    console.log(e.target.id);
+    console.log(data);
+    const inputValue = e.target.id;
+    const filteredMeals = data.filter((v) => {
+      return v.type.includes(inputValue);
+    }
+    );
+    console.log(filteredMeals);
+    renderMeals(filteredMeals);
 
 
-  //   const inputValue = e.id;
-  //   const filteredMeals = data.type.includes(inputValue);
+  });
 
-  //   renderMeals(filteredMeals);
-
-
-  // });
 
   renderMeals(data);
 
