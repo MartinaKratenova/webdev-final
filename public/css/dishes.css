@@ -35,38 +35,54 @@
 Filter
 
 *********/
-.filter {
+.filterDiv {
   padding: 20px;
   display: flex;
-  /* justify-items: flex-end;
-   flex-direction: row;
-   align-items: baseline; */
+  flex-wrap: wrap;
+
   justify-content: center;
 }
 
-.filter ul {
+.filter {
+  min-height: 44px;
+  width: 80vw;
+  border: none;
+  list-style-type: none;
+
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+
   gap: 30px;
   align-items: center;
-  list-style-type: none;
-  flex-wrap: wrap;
+  justify-content: space-between;
   justify-self: center;
+
 }
 
-.filter a {
+.filter li {
   text-decoration: none;
+  flex-wrap: wrap;
   color: var(--primary-color);
-  font-weight: 600;
+
+  min-height: 44px;
+  max-width: 180px;
+  align-self: center;
   transition: color 0.3s ease;
 }
 
-.filter a:hover {
+.filter li:hover,
+.filter li:active,
+.filter li:focus {
   color: var(--secondary-color);
+  font-weight: bolder;
+
 }
 
-
-
+.active {
+  color: var(--secondary-color);
+  font-weight: bolder;
+}
 
 
 /******
