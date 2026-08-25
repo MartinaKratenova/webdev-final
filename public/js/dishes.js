@@ -1,4 +1,5 @@
 const meals = document.getElementById('meals');
+const all = document.getElementById('all');
 
 const sectionDishes = document.getElementById('dishes');
 
@@ -40,6 +41,7 @@ const jidla = [
     "type": "dessert"
   }
 ];
+
 
 
 const renderMeals = (meals) => {
@@ -116,6 +118,18 @@ meals.addEventListener('click', (e) => {
 });
 
 
+all.addEventListener('click', (e) => {
+    const response = jidla;
+    
+     const data = response;
+
+    console.log(all);
+    console.log(e.target.id);
+    return renderMeals(data);
+
+
+
+  });
 
 const getAllMeals = () => {
 
@@ -123,28 +137,46 @@ const getAllMeals = () => {
 
   const data = response;
 
-  meals.addEventListener('click', (e) => {
+  all.addEventListener('click', (e) => {
 
+    console.log(all);
     console.log(e.target.id);
-    console.log(data);
+    return renderMeals(data);
+
+
+  });
+
+  meals.addEventListener('click', (e) => {
     const inputValue = e.target.id;
     const filteredMeals = data.filter((v) => {
       return v.type.includes(inputValue);
     }
     );
-    console.log(filteredMeals);
+
     renderMeals(filteredMeals);
 
 
   });
 
 
+
+
   renderMeals(data);
 
 };
 
+all.addEventListener('click', (e) => {
 
+  getAllMeals();
+  console.log(all);
+  console.log(e.target.id);
+
+
+
+
+});
 
 getAllMeals();
+
 
 
