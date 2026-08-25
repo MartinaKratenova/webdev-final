@@ -16,7 +16,7 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node --watch js/index.js"
+    "serve": "node --watch index.js"
   },
   "dependencies": {
     "ejs": "^6.0.1",
