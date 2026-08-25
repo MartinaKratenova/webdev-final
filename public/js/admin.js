@@ -242,3 +242,4 @@ const createFormCard = (name, description, price, type) => {
 };
 
 createFormCard('Pizza', 'Delicious cheese pizza', '$10', 'Main Course');
+
