@@ -39,13 +39,15 @@ Filter
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-
+  width: 100vw;
   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .filter {
   min-height: 44px;
-  width: 80vw;
+
   border: none;
   list-style-type: none;
 
@@ -53,7 +55,7 @@ Filter
   flex-direction: row;
   flex-wrap: wrap;
 
-  gap: 30px;
+  gap: 25px;
   align-items: center;
   justify-content: space-between;
   justify-self: center;
@@ -66,9 +68,11 @@ Filter
   color: var(--primary-color);
 
   min-height: 44px;
-  max-width: 180px;
+  min-width: 200px;
   align-self: center;
   transition: color 0.3s ease;
+
+  font-size: 1.2em;
 }
 
 .filter li:hover,
@@ -84,6 +88,10 @@ Filter
   font-weight: bolder;
 }
 
+.hidden {
+  display: none;
+
+}
 
 /******
 Dish card

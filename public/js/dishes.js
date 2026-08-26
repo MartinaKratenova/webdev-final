@@ -1,4 +1,5 @@
-const meals = document.getElementById('meals');
+const mealItems = document.querySelectorAll('.meal');
+
 const all = document.getElementById('all');
 
 const sectionDishes = document.getElementById('dishes');
@@ -43,21 +44,45 @@ const jidla = [
 ];
 
 
+//active a remove active
+
+mealItems.forEach(meal => {
+  meal.addEventListener('click', () => {
+
+    mealItems.forEach(item => {
+      item.classList.remove('active');
+    });
+
+    meal.classList.add('active');
+  });
+});
+
+//
 
 const renderMeals = (meals) => {
-
   sectionDishes.textContent = '';
+
   meals.forEach(m => {
+    const name = m.name;
+    const price = m.price;
+    const type = m.type;
+    const description = m.description;
+
     if (m.name && m.price && m.type && m.description) {
-      const mealCard = createMealCard(m.name, m.price, m.type, m.description);
+      const mealCard = createMealCard(
+        m.name,
+        m.price,
+        m.type,
+        m.description
+      );
+
       sectionDishes.append(mealCard);
-
     }
-  }
-  );
-
+  });
 };
 
+
+//Card creation
 
 const createMealCard = (name, price, type, description) => {
   let mealCard = document.createElement('div');
@@ -108,28 +133,6 @@ const createMealCard = (name, price, type, description) => {
 };
 
 
-meals.addEventListener('click', (e) => {
-
-  if (e.target.classList.contains('meal')) {
-    document.querySelector('.meal.active')?.classList.remove('active');
-    e.target.classList.add('active');
-  }
-
-});
-
-
-all.addEventListener('click', (e) => {
-    const response = jidla;
-    
-     const data = response;
-
-    console.log(all);
-    console.log(e.target.id);
-    return renderMeals(data);
-
-
-
-  });
 
 const getAllMeals = () => {
 
@@ -137,28 +140,20 @@ const getAllMeals = () => {
 
   const data = response;
 
-  all.addEventListener('click', (e) => {
+   mealItems.forEach(m => {
+    m.addEventListener('click', (e) => {
+      const inputValue = e.target.id;
+      const filteredMeals = data.filter((v) => {
+        return v.type.includes(inputValue);
+      }
+      );
 
-    console.log(all);
-    console.log(e.target.id);
-    return renderMeals(data);
+      renderMeals(filteredMeals);
 
 
-  });
-
-  meals.addEventListener('click', (e) => {
-    const inputValue = e.target.id;
-    const filteredMeals = data.filter((v) => {
-      return v.type.includes(inputValue);
-    }
-    );
-
-    renderMeals(filteredMeals);
-
+    });
 
   });
-
-
 
 
   renderMeals(data);
@@ -175,6 +170,7 @@ all.addEventListener('click', (e) => {
 
 
 });
+
 
 getAllMeals();
 
