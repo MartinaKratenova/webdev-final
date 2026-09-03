@@ -116,6 +116,7 @@ Dish card
   flex-direction: column;
   border: 1px solid var(--secondary-color);
   padding: 20px;
+  min-height: 200px;
   max-width: 500px;
   border-radius: 15px;
   justify-content: space-between;

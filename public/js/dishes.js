@@ -4,47 +4,16 @@ const all = document.getElementById('all');
 
 const sectionDishes = document.getElementById('dishes');
 
-const jidla = [
-  {
-    "name": "Spaghetti Carbonara",
-    "description": "Špagety s vejcem, parmazánem a křupavou pancettou.",
-    "price": 189,
-    "type": "italian"
-  },
-  {
-    "name": "Chicken Tikka Masala",
-    "description": "Kuřecí kousky v jemně pikantní omáčce z rajčat, smetany a indického koření.",
-    "price": 219,
-    "type": "main-course"
-  },
-  {
-    "name": "Butter Chicken",
-    "description": "Maslove Kuřecí kousky v jemně pikantní omáčce z rajčat, smetany a indického koření.",
-    "price": 300,
-    "type": "main-course"
-  },
-  {
-    "name": "Tomato Soup",
-    "description": "Krémová rajčatová polévka s bazalkou a čerstvými bylinkami.",
-    "price": 99,
-    "type": "soup"
-  },
-  {
-    "name": "Bruschetta",
-    "description": "Opečený chléb s rajčaty, česnekem, bazalkou a olivovým olejem.",
-    "price": 119,
-    "type": "starter"
-  },
-  {
-    "name": "Tiramisu",
-    "description": "Klasický italský dezert z mascarpone, kávy a kakaa.",
-    "price": 129,
-    "type": "dessert"
-  }
-];
+const dishesData = document.getElementById('dishes-data');
+
+
+const dishItems = JSON.parse(dishesData.dataset.dishes);
 
 
 //active a remove active
+
+
+
 
 mealItems.forEach(meal => {
   meal.addEventListener('click', () => {
@@ -65,14 +34,14 @@ const renderMeals = (meals) => {
   meals.forEach(m => {
     const name = m.name;
     const price = m.price;
-    const type = m.type;
+    const category_id = m.category_id;
     const description = m.description;
 
-    if (m.name && m.price && m.type && m.description) {
+    if (m.name && m.price && m.category_id && m.description) {
       const mealCard = createMealCard(
         m.name,
         m.price,
-        m.type,
+        m.category_id,
         m.description
       );
 
@@ -84,7 +53,7 @@ const renderMeals = (meals) => {
 
 //Card creation
 
-const createMealCard = (name, price, type, description) => {
+const createMealCard = (name, price, category_id, description) => {
   let mealCard = document.createElement('div');
   mealCard.classList.add('dish-card');
 
@@ -136,7 +105,8 @@ const createMealCard = (name, price, type, description) => {
 
 const getAllMeals = () => {
 
-  const response = jidla;
+  console.log(dishItems);
+  const response = dishItems;
 
   const data = response;
 
@@ -144,7 +114,7 @@ const getAllMeals = () => {
     m.addEventListener('click', (e) => {
       const inputValue = e.target.id;
       const filteredMeals = data.filter((v) => {
-        return v.type.includes(inputValue);
+        return v.category_id === parseInt(inputValue);
       }
       );
 
