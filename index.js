@@ -42,7 +42,7 @@ app.get('/admin', (req, res) => {
 app.get('/dishes', async (req, res, next) => {
   try {
     const result = await pool.query('SELECT * FROM menu_items');
-  
+
 
     res.render('dishes', {
       cssName: '/css/dishes.css',
@@ -55,7 +55,7 @@ app.get('/dishes', async (req, res, next) => {
     console.error('Chyba při získávání dat z databáze:', error);
     next(error);
   }
-  
+
 
 });
 
@@ -70,6 +70,14 @@ app.get('/error', (req, res) => {
 });
 
 
+// Speciální middleware pro chyby
+app.use((err, req, res, next) => {
+  const statusCode = err.status || 500;
+  const message = err.message || 'Něco se pokazilo!';
+  
+  res.status(statusCode).render('error', { message });
+
+});
 
 
 app.listen(port, () => {
