@@ -6,6 +6,7 @@ const sectionDishes = document.getElementById('dishes');
 
 const dishesData = document.getElementById('dishes-data');
 
+const filterItems = document.querySelectorAll('.filterItem');
 
 const dishItems = JSON.parse(dishesData.dataset.dishes);
 
@@ -15,10 +16,10 @@ const dishItems = JSON.parse(dishesData.dataset.dishes);
 
 
 
-mealItems.forEach(meal => {
+filterItems.forEach(meal => {
   meal.addEventListener('click', () => {
 
-    mealItems.forEach(item => {
+    filterItems.forEach(item => {
       item.classList.remove('active');
     });
 
